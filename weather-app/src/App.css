@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+form {
+  margin-bottom:20px;
+}
+
+input{
+  padding:8px;
+  width:300px;
+  margin-right: 15px;
+  margin-left: 125px;
+  align-items: center;
+}
+
+button{
+  padding: 8px, 12px;
+  cursor: pointer;
+}
+
+.weather, .forecast{
+  margin-top: 20px;
+}
+
+.foregrid{
+  display:flex;
+  justify-content:center;
+  gap: 20px;
+}
+
+.foreday{
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100px;
+}
