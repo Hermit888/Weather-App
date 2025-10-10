@@ -1,6 +1,7 @@
 import React from "react";
 
 function ForecastDisplay({data}){
+    // get the 5 days forecast data
     const days = data.list.filter((_,idx) => idx%8 === 0);
 
     return(
