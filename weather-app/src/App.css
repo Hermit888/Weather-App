@@ -4,6 +4,24 @@
   padding: 20px;
 }
 
+.topbar {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #eef2f3;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabs a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabs a:hover {
+  color: #0077ff;
+}
 
 form {
   margin-bottom:20px;
@@ -24,6 +42,11 @@ button{
 
 .method{
   margin-bottom: 20px;
+}
+
+.range{
+  padding-right: 100px;
+  margin-right: 100px;
 }
 
 .weather, .forecast{

@@ -1,5 +1,3 @@
-import React from "react";
-
 function WeatherDisplay({data}){
     const {name, main, wind,weather} = data;
 
