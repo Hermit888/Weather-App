@@ -168,6 +168,7 @@ export default function Main(){
             </a>
         </p>
 
+
       {error && <p className="error">{error}</p>}
       {weather && <WeatherDisplay data={weather} />}
       {forecast && <ForecastDisplay data={forecast} range={range}/>}
