@@ -2,7 +2,7 @@
 A weather app for the PM Accelerator technical assessment
 
 # Creating & Functions
-The web was created with React.js for the frontend and Python Flask for the backend, which can create, read, update, and delete the database. The database is PostgreSQL.
+The web app was created using React.js for the frontend and Python Flask for the backend, enabling the creation, reading, updating, and deletion of values in the database. The database is PostgreSQL.
 The web has two sections: Weather and Weather Database.
 - Weather section
   - Users can search a location's current weather and its forecast for a day range.
