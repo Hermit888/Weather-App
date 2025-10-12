@@ -107,7 +107,8 @@ def addWeather():
 @app.route('/readWeather', methods=['GET'])
 def read_weather():
     city = request.args.get('city')
-    date = request.args.get('date')  # expected in 'YYYY-MM-DD' format
+    # expected in 'YYYY-MM-DD' format
+    date = request.args.get('date')  
 
     # determine whether the city in db
     if not city or not date:
@@ -144,7 +145,8 @@ def read_weather():
 def update_weather():
     data = request.get_json()
     city = data.get('city')
-    date = data.get('date')  # 'YYYY-MM-DD'
+    # 'YYYY-MM-DD'
+    date = data.get('date')  
     temp = data.get('temperate')
 
     # determine whether the city in db
