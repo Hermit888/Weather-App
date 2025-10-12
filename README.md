@@ -25,7 +25,7 @@ cd WEATHER-APP
  2. Install Python if you don't have on your pc
  3. 
  4. Create a PostgreSQL database tabel based on the code below
-    ```
+ ```
 CREATE TABLE IF NOT EXISTS public.weather
 (
     city text COLLATE pg_catalog."default" NOT NULL,
@@ -44,6 +44,6 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.weather
     OWNER to postgres;
-    ```
+ ```
  5. Add your OpenWeatherMap API key in weather-app/.env
  6. Add your database (db) host, db name, db user, db password, and db port in weather-app/backend/.env
