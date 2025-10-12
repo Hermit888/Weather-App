@@ -22,7 +22,7 @@ The web has two sections: Weather and Weather Database.
 git clone https://github.com/yourusername/WEATHER-APP.git
 cd WEATHER-APP
   ```
-2. Install Python[https://www.python.org/downloads/] and React.js[https://nodejs.org/en] if you don't have it on your pc
+2. Install [Python](https://www.python.org/downloads/) and [React.js](https://nodejs.org/en) if you don't have it on your pc
 3. Set up the backend (Python + Flask)
 ```
 cd backend
