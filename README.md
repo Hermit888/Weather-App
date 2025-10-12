@@ -15,6 +15,7 @@ The web has two sections: Weather and Weather Database.
   - Users can read weather data that is in the database by typing the city name and a specific date.
   - Updating the temperature requires typing the city name, a specific date, and the new temperature.
   - Users can delete a city's weather by inputting the city name and a certain date.
+  - An error message will pop up if the city or the date is not found, or an invalid value is entered.
 
  # Test
 1. Clone the code to your pc.
