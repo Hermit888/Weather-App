@@ -27,9 +27,13 @@ cd WEATHER-APP
 ```
 cd backend
 python -m venv venv
-
+# Activate virtual environment
+# Windows:
 venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 
+# Install required packages
 pip install -r requirements.txt
 ```
 4. Set up frontend (React)
@@ -37,7 +41,7 @@ pip install -r requirements.txt
 cd ../weather-app
 npm install
 ```
-5. Create a PostgreSQL database table based on the code below
+5. Run the following SQL in your PostgreSQL client (pgAdmin):
  ```
 CREATE TABLE IF NOT EXISTS public.weather
 (
@@ -53,27 +57,25 @@ CREATE TABLE IF NOT EXISTS public.weather
     CONSTRAINT unique_city_date UNIQUE (city, date)
 )
  ```
-6. Add your OpenWeatherMap API key in weather-app/.env
+6. Configure environment variables:
+- Frontend (weather-app/.env):
 ```
 REACT_APP_API_KEY=your_openweatherapp_api_key
 ```
-7. Add your database (db) host, db name, db user, db password, and db port in weather-app/backend/.env
+  - Backend (weather-app/backend/.env):
 ```
-### info about your db
 DB_HOST=your_host
-# the name you create the database
 DB_NAME=your_db_name
 DB_USER=your_db_user
-# your password for postgresql
 DB_PASS=your_db_pswd
 DB_PORT=your_db_port
 ```
-8. Run backend
+7. Run backend
 ```
 cd backend
 python main.py
 ```
-9. Run frontend
+8. Run frontend
 ```
 cd ../weather-app
 npm start
