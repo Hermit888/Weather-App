@@ -25,6 +25,7 @@ export default function Main(){
     case "zip":
       typeInput = (
         <input 
+          className="weatherInput"
           type="text"
           placeholder="Enter a zip code e.g. 90001,US"
           value = {zip}
@@ -35,6 +36,7 @@ export default function Main(){
     case "coor":
       typeInput = (
         <input 
+          className="weatherInput"
           type="text"
           placeholder="Enter coordinates e.g. 34.05,-118.25"
           value = {`${coor.lat}${coor.lon ? ',' + coor.lon : ''}`}
@@ -48,6 +50,7 @@ export default function Main(){
     default:
       typeInput = (
         <input 
+          className="weatherInput"
           type="text"
           placeholder="Enter a city name e.g. Los Angeles"
           value = {city}
@@ -61,6 +64,8 @@ export default function Main(){
   const handleSearch =async(e) => {
     e.preventDefault();
 
+    // days range to the true range 
+    // avoid dynamic range slider
     setRange(tempRange);
 
     let weaData, foreData;
@@ -68,7 +73,6 @@ export default function Main(){
     try{
       setError("");
       
-
       // determine the method of searching
       if (method==="zip"){
         weaData = await fetchZipWeather(zip);
@@ -88,15 +92,15 @@ export default function Main(){
       setWeather(weaData);
       setForecst(foreData);
 
-      // prepare forecast
-    //   const forecast = foreData.list.map(item => ({
-    //     dt: item.dt,
-    //     description:item.weather[0].description,
-    //     temp: item.main.temp,
-    //     pressure: item.main.pressure,
-    //     humidity: item.main.humidity,
-    //     wind_speed: item.wind.speed
-    //   }));
+        //prepare forecast
+        const forecasts = foreData.list.map(item => ({
+            date: item.dt,
+            description:item.weather[0].description,
+            temp: item.main.temp,
+            pressure: item.main.pressure,
+            humidity: item.main.humidity,
+            wind_speed: item.wind.speed
+        }));
 
         await fetch("http://127.0.0.1:5000/addWeather", {
             method: 'POST',
@@ -109,7 +113,9 @@ export default function Main(){
                     pressure: weaData.main.pressure,
                     humidity:weaData.main.humidity,
                     wind_speed:weaData.wind.speed
-                }
+                },
+                daysRange: range,
+                forecats: forecasts
             })
         });
 
@@ -151,7 +157,7 @@ export default function Main(){
             value = {tempRange}
             onChange={(e) => setTempRange(e.target.value)}/>
           <br/>
-          <label className="dates">Date range: {range}</label>
+          <label className="dates">Date range: {tempRange}</label>
         </div>
       </form>
 
