@@ -17,14 +17,27 @@ The web has two sections: Weather and Weather Database.
   - Users can delete a city's weather by inputting the city name and a certain date.
 
  # Test
- 1. Clone the code to your pc.
+1. Clone the code to your pc.
   ```
 git clone https://github.com/yourusername/WEATHER-APP.git
 cd WEATHER-APP
   ```
- 2. Install Python if you don't have on your pc
- 3. 
- 4. Create a PostgreSQL database tabel based on the code below
+2. Install Python[https://www.python.org/downloads/] and React.js[https://nodejs.org/en] if you don't have it on your pc
+3. Set up the backend (Python + Flask)
+```
+cd backend
+python -m venv venv
+
+venv\Scripts\activate
+
+pip install -r requirements.txt
+```
+4. Set up frontend (React)
+```
+cd ../weather-app
+npm install
+```
+5. Create a PostgreSQL database table based on the code below
  ```
 CREATE TABLE IF NOT EXISTS public.weather
 (
@@ -39,11 +52,29 @@ CREATE TABLE IF NOT EXISTS public.weather
     CONSTRAINT weather_pkey PRIMARY KEY (id),
     CONSTRAINT unique_city_date UNIQUE (city, date)
 )
-
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.weather
-    OWNER to postgres;
  ```
- 5. Add your OpenWeatherMap API key in weather-app/.env
- 6. Add your database (db) host, db name, db user, db password, and db port in weather-app/backend/.env
+6. Add your OpenWeatherMap API key in weather-app/.env
+```
+REACT_APP_API_KEY=your_openweatherapp_api_key
+```
+7. Add your database (db) host, db name, db user, db password, and db port in weather-app/backend/.env
+```
+### info about your db
+DB_HOST=your_host
+# the name you create the database
+DB_NAME=your_db_name
+DB_USER=your_db_user
+# your password for postgresql
+DB_PASS=your_db_pswd
+DB_PORT=your_db_port
+```
+8. Run backend
+```
+cd backend
+python main.py
+```
+9. Run frontend
+```
+cd ../weather-app
+npm start
+```
