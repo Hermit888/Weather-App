@@ -148,18 +148,25 @@ export default function Main(){
         <button type="submit">Search Weather</button>
         
         <div>
-          <input 
-            className="range"
-            type="range" 
-            min="1"
-            max="5" 
-            step= "1"
-            value = {tempRange}
-            onChange={(e) => setTempRange(e.target.value)}/>
-          <br/>
-          <label className="dates">Date range: {tempRange}</label>
-        </div>
-      </form>
+            <input 
+                className="range"
+                type="range" 
+                min="1"
+                max="5" 
+                step= "1"
+                value = {tempRange}
+                onChange={(e) => setTempRange(e.target.value)}/>
+            <br/>
+            <label className="dates">Date range: {tempRange}</label>
+            </div>
+        </form>
+        
+        <p className="info">Yuxuan Qian &  
+            <a  href="https://www.linkedin.com/school/pmaccelerator/" 
+                target="_blank">
+                PM Accelerator
+            </a>
+        </p>
 
       {error && <p className="error">{error}</p>}
       {weather && <WeatherDisplay data={weather} />}
