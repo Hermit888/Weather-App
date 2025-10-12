@@ -151,6 +151,10 @@ def update_weather():
     if not city or not date or temp is None:
         return jsonify({'error': 'City, date, or temperature not provided or invalid value!'}), 400
 
+    # if temp is invalid 
+    if type(temp) != float:
+        return jsonify({'error': 'Temperature is invalid value!'}), 400
+    
     # update db
     conn = dbConnect()
     cur = conn.cursor()
