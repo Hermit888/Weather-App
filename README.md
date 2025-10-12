@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS public.weather
     CONSTRAINT unique_city_date UNIQUE (city, date)
 )
  ```
+You don’t need to insert data manually. New weather data will be added automatically after you successfully search in the web app.
 6. Configure environment variables:
 - Frontend (weather-app/.env):
 ```
